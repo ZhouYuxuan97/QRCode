@@ -1,0 +1,86 @@
+img{
+	width: 100px;
+	height: 100px;
+}
+h4 span{
+	font-size:12px;
+	color: #C3C3C3;
+	padding-left: 10px;
+}
+li{
+	list-style:none;;
+}
+.span4{
+	margin-top: 10px;
+}
+.z_button button{
+	width:100px;
+    margin:20px 20px 0 0;
+}
+
+.z_img{
+	margin-left:20px;
+}
+.caption{
+	paddinf-left:20px;]
+}
+.modal-body{
+	margin:30px 0 30px 0;
+}
+.modal-body img{
+	margin-left:140px;
+}
+.modal-body button{
+	width: 130px;
+	margin: 20px 0 20px 220px;
+}
+.modal-footer a button{
+	width: 100px;
+	float:left;
+	margin:20px 0 20px 190px;
+}
+.modal-footer  button{
+	width: 100px;
+	float:left;
+	margin:10px 0 10px 210px;
+}
+.upload_before{
+	position:relative;
+	width: 550px;
+	height: 228px;
+	background-color: #FFF;
+	border:1px dashed #ddd;
+	text-align: center;
+	margin-top: 30px;
+	overflow:hidden;
+}
+.upload-icon-file{
+	background: url(../photos/file-upload.png);
+	display: block;
+	width: 64px;
+	height: 64px;
+	background-repeat: no-repeat;
+	margin: 60px auto 10px;
+	margin-left: 245px;
+	background-size: cover;
+}
+.upload_before h4{
+	font-weight: 500;
+	line-height: 1.1;
+	cursor:pointer;
+	
+}
+.upload_before input{
+	display: none;
+	opacity: 0;
+}
+#fileName{
+	padding-left:20px; 
+	color: #999999; 
+	height: 35px; 
+	border: 1px solid aliceblue;
+}
+#tid{
+	display: none;
+	opacity: 0;
+}

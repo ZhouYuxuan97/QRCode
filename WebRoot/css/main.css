@@ -1,0 +1,125 @@
+
+@charset "utf-8";
+
+.page_left{
+	width: 180px;
+	height: 800px;
+	float: left;
+}
+.page_left .btn{
+	margin-top: 15px;
+	margin-left: 25px;
+}
+
+.page_left  .nav a{
+	border:none; 
+	background:ailceblue;
+}
+
+.header{
+	float: right;
+	margin-top: -30px;
+}
+.header2{
+	float: right;	
+}
+
+.page_center{
+	width: 700px;
+	height: 800px;
+	float: left;
+}
+.upload_before{
+	position:relative;
+	width: 666px;
+	height: 300px;
+	background-color: #FFF;
+	border:1px dashed #ddd;
+	text-align: center;
+	margin-top: 30px;
+}
+.upload-icon-file{
+	background: url(../photos/file-upload.png);
+	display: block;
+	width: 64px;
+	height: 64px;
+	background-repeat: no-repeat;
+	margin: 60px auto 10px;
+	margin-left: 302px;
+	background-size: cover;
+}
+.upload_before h4{
+	font-weight: 500;
+	line-height: 1.1;
+	cursor:pointer;
+	background: white;
+}
+#uploadFile{
+	display: none;
+	opacity: 0;
+}
+#fileName{
+	padding-left:20px; 
+	color: #999999; 
+	height: 35px; 
+	border: 1px solid aliceblue;
+	width:270px;
+	margin-top:20px;
+}
+
+.progress{
+	width: 666px;
+}
+
+
+#uploadFile{
+	background:white;	
+}
+.underbutton .btn{
+	margin-top: 20px;
+	
+}
+.underbutton p{
+	text-align: center;
+}
+
+.webseit{
+	height: 800px;
+	width: 700px;
+	/*background: plum;*/
+	float: inherit;
+	float: left;
+}
+
+.webseit-form{
+	width: 550px;
+	height: 50px;
+	margin: 30px 30px;
+	font-size: 14px;
+	border: .0625rem solid #ccc;
+	background-color: #FFFFFF;
+}
+ .webseit-form::-webkit-input-placeholder{
+    font-size: 22px;
+    line-height: 50px;
+    font: "微软雅黑";
+    color: #D0D1D2;
+}
+
+.page_right{
+	width: 260px;
+	height: 800px;
+	float: left;
+}
+.result{
+	width:250px;
+	height: 300px;
+	border:1px solid #ddd;
+	margin:30px 5px;
+}
+.image{
+	margin: 13px 13px;
+}
+.download{
+	margin: 13px 76px;
+}

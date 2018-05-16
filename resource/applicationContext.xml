@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:webflow-config="http://www.springframework.org/schema/webflow-config"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd" >
+
+	
+	<context:component-scan base-package="com.two.*" />
+	
+	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+     	<property name="driverClass" value="com.mysql.jdbc.Driver" />
+	 	<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/qrcode?useUnicode=true&amp;characterEncoding=UTF-8" />
+	 	<property name="user" value="root" />
+		<property name="password" value="root" />
+		<!-- <property name="password" value="HUBU713@qq.com" />  -->	
+	 </bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>  
+                <!-- 在log和console中打印出更漂亮的SQL -->
+				<prop key="hibernate.format_sql">true</prop> 
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+			</props>			
+		</property>
+		
+		<property name="packagesToScan">
+			<list>
+				<value>com.two.po</value>
+			</list>
+		</property>
+	</bean>
+	
+		<!-- 配置Spring的声明式事务 -->
+	<!-- 1.配置事务管理器 --><!-- 用来对hibernate的session执行进行提交 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<!-- 配置事物切点,并把切点和事务属性管理起来 -->
+	<!-- <aop:config>
+		<aop:pointcut expression="execution(* com.it.show.*.*(..))"
+			id="businessService" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="businessService" />
+	</aop:config>
+	配置事务属性
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" propagation="SUPPORTS" />
+			get开头的方法不需要在事务中运行 。 有些情况是没有必要使用事务的，比如获取数据。开启事务本身对性能是有一定的影响的
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			其他方法在实务中运行
+		</tx:attributes>
+	</tx:advice> -->
+	 <!-- the transactional advice (what 'happens'; see the <aop:advisor/> bean below) -->
+ <!--  <tx:advice id="txAdvice">
+    the transactional semantics...
+    <tx:attributes>
+      all methods starting with 'get' are read-only
+      <tx:method name="save*" rollback-for="Exception"/>
+      <tx:method name="delete*" rollback-for="Exception"/>
+      <tx:method name="update*" rollback-for="Exception"/>
+      other methods use the default transaction settings (see below)
+      <tx:method name="*" read-only="true"/>
+    </tx:attributes>
+  </tx:advice>
+
+  ensure that the above transactional advice runs for any execution
+    of an operation defined by the FooService interface
+  <aop:config>
+    <aop:pointcut id="gatesService" expression="execution(* com.it.show.dao.*.*(..))"/>
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="gatesService"/>
+  </aop:config>
+   -->
+ 
+ </beans>

@@ -1,0 +1,51 @@
+@charset "utf-8";
+.webseit-left{
+	width: 300px;
+	height: 20px;
+	background: palegoldenrod;
+	float: left;
+	margin-left: 10px;
+}
+.webseit{
+	height: 300px;
+	width: 200px;
+	float: inherit;
+	float: left;
+}
+.webseit-form{
+	width: 350px;
+	height: 50px;
+	margin: 30px 30px;
+	font-size: 14px;
+	border: .0625rem solid #ccc;
+	background-color: #FFFFFF;
+}
+ .webseit-form::-webkit-input-placeholder{
+    font-size: 22px;
+    line-height: 50px;
+    font: "微软雅黑";
+    color: #D0D1D2;
+}
+
+
+.webseit-left .underbutton{
+	margin-left: 230px;
+}
+.webseit-right{
+	width: 260px;
+	height: 500px;
+	/*background: palegreen;*/
+	float: left;
+}
+.webseit-right-result{
+	width:250px;
+	height: 300px;
+	border:1px solid #ddd;
+	margin:30px 5px;
+}
+.webseit-right-image{
+	margin: 13px 13px;
+}
+.webseit-right-download{
+	margin: 13px 76px;
+}

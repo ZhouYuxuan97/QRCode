@@ -1,0 +1,61 @@
+.upload_before{
+	position:relative;
+	width: 400px;
+	height: 228px;
+	background-color: #FFF;
+	border:1px dashed #ddd;
+	text-align: center;
+	margin-top: 30px;
+	overflow:hidden;
+}
+.upload-icon-file{
+	background: url(../photos/file-upload.png);
+	display: block;
+	width: 64px;
+	height: 64px;
+	background-repeat: no-repeat;
+	margin: 60px auto 10px;
+	margin-left: 170px;
+	background-size: cover;
+}
+.underbutton button{
+	margin:30px 0 10px 155px;
+}
+.download button{
+	margin:30px 0 10px 61px;
+}
+.save{
+	float:left;
+}
+.page_right{
+	margin-top:30px;
+	margin-righe:50px;
+}
+.upload_before h4{
+	font-weight: 500;
+	line-height: 1.1;
+	cursor:pointer;
+	
+}
+.upload_before input{
+	display: none;
+	opacity: 0;
+}
+#fileName{
+	padding-left:20px; 
+	color: #999999; 
+	height: 35px; 
+	border: 1px solid aliceblue;
+}
+#tid{
+	display: none;
+	opacity: 0;
+}
+.z_button{
+	position:absolute;
+	left:327px;
+	buttom:20px;
+}
+.z_btn{
+	width:150px
+}
